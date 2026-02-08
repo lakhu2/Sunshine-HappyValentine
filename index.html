@@ -169,6 +169,10 @@
         <div class="top-actions">
             <button class="button" onclick="openModal()">Click for a Surprise! 💝</button>
             <button class="button" onclick="openDailyModal()" style="background: #ff7ab8;">Daily Surprises 🌹</button>
+            <button class="button" onclick="openLoveReasons()" style="background: #ff6b9d;">100 Reasons I Love You 💕</button>
+            <button class="button" onclick="openFutureVision()" style="background: #667eea;">Our Future Together 🔮</button>
+            <button class="button" onclick="openSpecialDates()" style="background: #fa709a;">Special Dates ⏰</button>
+            <button class="button" onclick="openDateIdeas()" style="background: #f5576c;">Date Ideas 🎡</button>
             <button class="button" onclick="openQuiz()" style="background: #e74c3c;">Love Quiz 💕</button>
             <button class="button" onclick="openReflections()" style="background: #9b59b6;">Love Reflections 💭</button>
             <button class="button" onclick="openGameModal()" style="background: #5dade2;">Play Mini Game 🎮</button>
@@ -339,10 +343,106 @@
         </div>
     </div>
 
+    <!-- LOVE REASONS MODAL -->
+    <div id="loveReasonsModal" class="love-reasons-modal">
+        <div class="reasons-container">
+            <span class="close" onclick="closeLoveReasons()" style="position: absolute; top: 15px; right: 20px; color: white; font-size: 2rem; cursor: pointer; z-index: 10;">&times;</span>
+            
+            <div class="reasons-header">
+                <h2>100 Reasons Why I Love You 💕</h2>
+                <p style="color: #6f4fb8; font-size: 0.95rem;">Every reason is a piece of my heart</p>
+            </div>
+
+            <div class="reason-card-container">
+                <div class="reason-card">
+                    <p class="reason-text" id="reasonText">Click a button to see why you're amazing!</p>
+                </div>
+            </div>
+
+            <div class="reason-counter" id="reasonCounter">0 / 100</div>
+
+            <div class="reason-controls">
+                <button class="reason-btn" onclick="showPrevReason()">← Previous</button>
+                <button class="reason-btn" onclick="showRandomReason()">🎲 Random</button>
+                <button class="reason-btn" onclick="showNextReason()">Next →</button>
+            </div>
+
+            <div class="reason-controls" style="margin-top: 15px;">
+                <button class="reason-btn reason-btn-fav" id="favReasonBtn" onclick="toggleFavorite()">🤍</button>
+                <button class="reason-btn reason-btn-secondary" onclick="showFavorites()">View Favorites</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FUTURE VISION MODAL -->
+    <div id="futureVisionModal" class="future-vision-modal">
+        <div class="vision-container">
+            <span class="close" onclick="closeFutureVision()" style="position: absolute; top: 15px; right: 20px; color: white; font-size: 2rem; cursor: pointer; z-index: 10;">&times;</span>
+            
+            <div class="vision-header">
+                <h2>Our Future Together 🔮</h2>
+                <p>The beautiful journey we're building</p>
+            </div>
+
+            <div class="vision-grid" id="visionContainer">
+                <!-- Vision cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SPECIAL DATES MODAL -->
+    <div id="specialDatesModal" class="special-dates-modal">
+        <div class="dates-container">
+            <span class="close" onclick="closeSpecialDates()" style="position: absolute; top: 15px; right: 20px; color: white; font-size: 2rem; cursor: pointer; z-index: 10;">&times;</span>
+            
+            <div class="dates-header">
+                <h2>Our Special Dates ⏰</h2>
+                <p style="color: white; font-size: 0.95rem;">Counting every moment with you</p>
+            </div>
+
+            <div class="dates-grid" id="datesContainer">
+                <!-- Date cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- DATE IDEAS MODAL -->
+    <div id="dateIdeasModal" class="date-ideas-modal">
+        <div class="ideas-container">
+            <span class="close" onclick="closeDateIdeas()" style="position: absolute; top: 15px; right: 20px; color: white; font-size: 2rem; cursor: pointer; z-index: 10;">&times;</span>
+            
+            <div class="ideas-header">
+                <h2>Date Ideas Generator 🎡</h2>
+                <p>Let's create beautiful memories together</p>
+            </div>
+
+            <div class="spinner-section">
+                <h3 style="color: #6f4fb8; margin-bottom: 15px;">Spin the Wheel!</h3>
+                <button class="spin-button" id="spinBtn" onclick="spinDateWheel()">🎡 Spin for a Date Idea</button>
+                <div class="spin-result" id="spinResult">Click spin to get a random date idea!</div>
+            </div>
+
+            <div class="categories-section">
+                <h3>Or Browse by Category</h3>
+                <div class="categories-grid" id="categoriesContainer">
+                    <!-- Category buttons will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <div class="ideas-list-section" id="ideasList">
+                <p style="text-align: center; color: #999; font-style: italic;">Select a category to see ideas</p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
     <script src="daily.js"></script>
     <script src="quiz.js"></script>
     <script src="reflections.js"></script>
     <script src="games.js"></script>
+    <script src="lovereasons.js"></script>
+    <script src="futurevision.js"></script>
+    <script src="specialdates.js"></script>
+    <script src="dateideas.js"></script>
 </body>
 </html>
