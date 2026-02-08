@@ -809,7 +809,7 @@ p {
     align-items: center;
     gap: clamp(2rem, 4vw, 3rem);
     scroll-behavior: smooth;
-    scroll-snap-type: x proximity;
+    scroll-snap-type: x mandatory;
 }
 
 .story-card {
@@ -829,6 +829,7 @@ p {
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    scroll-snap-align: center;
 }
 
 .story-card.visible {
@@ -879,10 +880,16 @@ p {
 
 /* Mobile */
 @media (max-width: 768px) {
+    .timeline-scroll-container {
+        scroll-snap-type: x mandatory;
+        padding: 30px 1rem;
+    }
+    
     .story-card {
-        min-width: 150px;
-        max-width: 150px;
+        min-width: 250px;
+        max-width: 250px;
         padding: 1rem;
+        scroll-snap-align: center;
     }
     
     .card-year {
