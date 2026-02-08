@@ -344,8 +344,13 @@ function toggleTimeline() {
         cards.forEach((card, index) => {
             setTimeout(() => {
                 card.classList.add('visible');
-                if (container && index > 2) {
-                    container.scrollLeft = (index - 2) * 220;
+                if (container) {
+                    const cardWidth = card.offsetWidth;
+                    const gap = window.innerWidth <= 768 ? 32 : 48;
+                    container.scrollTo({
+                        left: index * (cardWidth + gap),
+                        behavior: 'smooth'
+                    });
                 }
             }, delay);
             delay += 1500;
